@@ -1,2 +1,2 @@
 # Webtan
-<a harf="https://devmannaabid.github.io/webtan/">webtan frontend link</a>
+https://devmannaabid.github.io/webtan
