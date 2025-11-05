@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard-Analytics</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- CSS files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="overflow-x-hidden bg-light">
+
+    <!-- Header -->
+    <header class="dashboard-header bg-primary text-white py-2 px-3 d-flex align-items-center fixed-top">
+        <button class="btn btn-outline-light d-md-none me-2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar">
+            ☰
+        </button>
+        <h4 class="mb-0 flex-grow-1 text-center text-md-start">Welcome to Dashboard</h4>
+        <div class="d-flex align-items-center">
+            <span class="me-3 d-none d-sm-block">Welcome, User</span>
+            <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+
+            <!-- Single Sidebar (offcanvas for mobile + static for desktop) -->
+            <div class="col-md-3 col-lg-2">
+                <div class="offcanvas-md offcanvas-start bg-dark text-white" tabindex="-1" id="sidebar"
+                    aria-labelledby="sidebarLabel">
+                    <div class="offcanvas-header d-flex d-md-none bg-dark">
+                        <h5 class="offcanvas-title" id="sidebarLabel">Dashboard Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            data-bs-target="#sidebar"></button>
+                    </div>
+                    <div class="offcanvas-body p-0 d-flex flex-column">
+                        <div class="p-3 pb-0 d-none d-md-block">
+                            <h5 class="mb-0">Dashboard</h5>
+                            <p class="text-muted small mb-0">Navigation Menu</p>
+                        </div>
+                        <hr class="my-2 d-none d-md-block">
+                        <ul class="nav flex-column flex-grow-1 pt-2">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="team.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-person-bounding-box me-2"></i>Team
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="analytics.html" class="nav-link text-info sidebar-link active">
+                                    <i class="bi bi-bar-chart me-2"></i>Analytics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="users.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-people me-2"></i>Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="table.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-file-text me-2"></i>Table
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="services.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-hdd-stack me-2"></i>Services
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="blogs.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-chat-right-dots me-2"></i>Blogs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="events.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-calendar2-check me-2"></i>Events
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="partners.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-person-video me-2"></i>Partners
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="settings.html" class="nav-link text-white sidebar-link">
+                                    <i class="bi bi-gear me-2"></i>Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 col-lg-10 main-content bg-white p-4 mt-5 pt-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>Dashboard Analytics</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="text-decoration-none">WebTan</a></li>
+                            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Analytics</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col-md-6 mx-auto mt-4">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-white">
+                                <h6 class="mb-0">Monthly Stats</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="line-chart" height="220"></canvas>
+                            </div>
+                            <div class="card-footer border-top bg-white">
+                                <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
+                                    <div class="text-center">
+                                        <span class="fw-semibold text-dark me-2">
+                                            54% <i class="bi bi-graph-up text-success"></i>
+                                        </span>
+                                        <small class="text-muted fw-semibold d-block">Sales Growth</small>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="fw-semibold text-dark me-2">
+                                            $185K <i class="bi bi-graph-up-arrow text-success"></i>
+                                        </span>
+                                        <small class="text-muted fw-semibold d-block">Dec Sales</small>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="fw-semibold text-dark me-2">
+                                            60% <i class="bi bi-arrow-up-short text-success"></i>
+                                        </span>
+                                        <small class="text-muted fw-semibold d-block">Profit Growth</small>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="fw-semibold text-dark me-2">
+                                            $72K <i class="bi bi-cash-coin text-success"></i>
+                                        </span>
+                                        <small class="text-muted fw-semibold d-block">Dec Profit</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="m-0 fw-bold text-primary">
+                                    <i class="bi bi-wallet2 me-2"></i>Payment Methods
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1 align-items-center">
+                                        <span><i class="bi bi-credit-card-2-front me-2 text-primary"></i> Credit
+                                            Card</span>
+                                        <span class="fw-semibold">54%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 54%;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PayPal -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1 align-items-center">
+                                        <span><i class="bi bi-paypal me-2 text-info"></i> PayPal</span>
+                                        <span class="fw-semibold">26%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 26%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Bank Transfer -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1 align-items-center">
+                                        <span><i class="bi bi-bank me-2 text-success"></i> Bank Transfer</span>
+                                        <span class="fw-semibold">12%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 12%;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Other -->
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1 align-items-center">
+                                        <span><i class="bi bi-cash-coin me-2 text-warning"></i> Other</span>
+                                        <span class="fw-semibold">8%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 8%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">Calendar</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Calendar Container -->
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-white py-3">
+                                <h6>
+                                    <i class="bi bi-wallet2 me-2"></i>Payment Methods
+                                </h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th scope="col">Method</th>
+                                                <th scope="col" class="text-center">Icon</th>
+                                                <th scope="col" class="text-end">Usage</th>
+                                                <th scope="col" class="text-end">Growth</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Credit Card</td>
+                                                <td class="text-center"><i
+                                                        class="bi bi-credit-card-2-front text-primary fs-5"></i></td>
+                                                <td class="text-end">54%</td>
+                                                <td class="text-end text-success">
+                                                    <i class="bi bi-graph-up-arrow"></i> +8%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>PayPal</td>
+                                                <td class="text-center"><i class="bi bi-paypal text-info fs-5"></i></td>
+                                                <td class="text-end">26%</td>
+                                                <td class="text-end text-success">
+                                                    <i class="bi bi-graph-up-arrow"></i> +4%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bank Transfer</td>
+                                                <td class="text-center"><i class="bi bi-bank text-success fs-5"></i>
+                                                </td>
+                                                <td class="text-end">12%</td>
+                                                <td class="text-end text-danger">
+                                                    <i class="bi bi-graph-down-arrow"></i> -2%
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Other</td>
+                                                <td class="text-center"><i
+                                                        class="bi bi-cash-coin text-warning fs-5"></i></td>
+                                                <td class="text-end">8%</td>
+                                                <td class="text-end text-muted">
+                                                    <i class="bi bi-dash"></i> 0%
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- javascript files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/calender.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/stats.js"></script>
+    <!-- Include JS (FullCalendar) -->
+    <script src="js/index.global.min.js"></script>
+</body>
+
+</html>

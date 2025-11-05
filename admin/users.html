@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard-Services</title>
+    <title>Dashboard Users</title>
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- CSS files -->
@@ -74,7 +74,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="users.html" class="nav-link text-white sidebar-link">
+                                <a href="users.html" class="nav-link text-info sidebar-link active">
                                     <i class="bi bi-people me-2"></i>Users
                                 </a>
                             </li>
@@ -84,7 +84,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="services.html" class="nav-link text-info sidebar-link active">
+                                <a href="services.html" class="nav-link text-white sidebar-link">
                                     <i class="bi bi-hdd-stack me-2"></i>Services
                                 </a>
                             </li>
@@ -116,29 +116,16 @@
             <!-- Main Content -->
             <main class="col-md-9 col-lg-10 main-content bg-white p-4 mt-5 pt-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4>Dashboard Services</h4>
+                    <h4>Dashboard Users</h4>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" class="text-decoration-none">WebTan</a></li>
                             <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Services Table</li>
+                            <li class="breadcrumb-item active" aria-current="page">Users Table</li>
                         </ol>
                     </nav>
                 </div>
-
-                <div class="d-flex justify-content-between mb-2">
-                    <!-- Download Report Button on the start -->
-                    <button class="btn btn-outline-success mb-2" id="downloadPdfBtn">
-                        <i class="bi bi-download me-2"></i>Download Report
-                    </button>
-
-                    <!-- Add Item Button on the end -->
-                    <button class="btn btn-outline-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-                        <i class="bi bi-plus-circle me-2"></i>Add
-                    </button>
-                </div>
-
 
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center flex-wrap">
@@ -151,6 +138,7 @@
                             <ul class="dropdown-menu" aria-labelledby="showDropdown">
                                 <li><a class="dropdown-item" href="#">5</a></li>
                                 <li><a class="dropdown-item" href="#">10</a></li>
+                                <li><a class="dropdown-item" href="#">15</a></li>
                                 <li><a class="dropdown-item" href="#">25</a></li>
                                 <li><a class="dropdown-item" href="#">50</a></li>
                                 <li><a class="dropdown-item" href="#">100</a></li>
@@ -168,13 +156,13 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped align-middle" id="dataTable">
+                            <table class="table table-striped align-middle">
                                 <thead>
                                     <tr>
                                         <th>S/M</th>
-                                        <th>Name</th>
-                                        <th>Details</th>
                                         <th>File</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -182,70 +170,13 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Web Development</td>
-                                        <td>Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.</td>
-                                        <td><img src="images/website devolopment.png"
+                                        <td><img src="images/profile.webp"
                                                 class="img-thumbnail rounded-2 object-fit-cover" alt="Project Proposal"
-                                                style="width: 60px; height: 40px;"></td>
+                                                style="width: 40px; height: 40px;"></td>
+                                        <td>Md Abid Islam</td>
+                                        <td>abid.123@gmail.com</td>
                                         <td><span class="badge bg-success">Active</span></td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-success"
-                                                data-bs-target="#editModalToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-pencil-square"></i></button>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"
-                                                data-bs-target="#deleteModelToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>App Development</td>
-                                        <td>Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.</td>
-                                        <td><img src="images/app development.png"
-                                                class="img-thumbnail rounded-2 object-fit-cover" alt="Project Proposal"
-                                                style="width: 60px; height: 40px;"></td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-success"
-                                                data-bs-target="#editModalToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-pencil-square"></i></button>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"
-                                                data-bs-target="#deleteModelToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Database development</td>
-                                        <td>Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.</td>
-                                        <td><img src="images/databasepreview.png"
-                                                class="img-thumbnail rounded-2 object-fit-cover" alt="Project Proposal"
-                                                style="width: 60px; height: 40px;"></td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-success"
-                                                data-bs-target="#editModalToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-pencil-square"></i></button>
-                                            <a href="#" class="btn btn-sm btn-outline-danger"
-                                                data-bs-target="#deleteModelToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Game Development</td>
-                                        <td>Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.</td>
-                                        <td><img src="images/game.png" class="img-thumbnail rounded-2 object-fit-cover"
-                                                alt="Project Proposal" style="width: 60px; height: 40px;"></td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-success"
-                                                data-bs-target="#editModalToggle" data-bs-toggle="modal"><i
-                                                    class="bi bi-pencil-square"></i></button>
                                             <a href="#" class="btn btn-sm btn-outline-danger"
                                                 data-bs-target="#deleteModelToggle" data-bs-toggle="modal"><i
                                                     class="bi bi-trash"></i></a>
@@ -308,19 +239,19 @@
                             <form id="addItemForm" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label for="itemTitle" class="form-label">Name :</label>
+                                        <label for="itemTitle" class="form-label">Title</label>
                                         <input type="text" class="form-control" id="itemTitle" name="title"
                                             placeholder="Enter title" required>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="itemDetails" class="form-label">Details :</label>
+                                        <label for="itemDetails" class="form-label">Details</label>
                                         <textarea class="form-control" id="itemDetails" name="details" rows="3"
                                             placeholder="Enter details" required></textarea>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label class="form-label">Image :</label>
+                                        <label class="form-label">Website Footer Logo :</label>
                                         <div class="border-secondary rounded-3 p-5 text-center cursor-pointer position-relative d-flex flex-column justify-content-center align-items-center"
                                             style="border: 2px dashed; height: 200px;">
                                             <img id="img1" src="images/defult-uplode.png" alt="Preview Footer Logo"
@@ -351,9 +282,6 @@
     <!-- javascript files -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/report.js"></script>
-    <script src="js/jspdf.umd.min.js"></script>
-    <script src="js/jspdf.plugin.autotable.min.js"></script>
 </body>
 
 </html>
